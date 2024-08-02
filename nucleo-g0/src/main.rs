@@ -7,18 +7,29 @@ use panic_halt as _; // you can put a breakpoint on `rust_begin_unwind` to catch
 // use panic_itm as _; // logs messages over ITM; requires ITM support
 // use panic_semihosting as _; // logs messages to the host stderr; requires a debugger
 
-use cortex_m::asm;
-use cortex_m_rt::entry;
 use stm32g0::stm32g0b1;
 
 use rtt_target::{rprintln, rtt_init_print};
 
-#[entry]
-fn main() -> ! {
-    rtt_init_print!();
-    rprintln!("Hello, world!");
+use rtic::app;
 
-    loop {
-        rprintln!("Bruh!");
+#[app(device = stm32g0b1)]
+mod app {
+    use super::*;
+
+    #[shared]
+    struct Shared {}
+
+    #[local]
+    struct Local {}
+
+    #[init]
+    fn init(_: init::Context) -> (Shared, Local, init::Monotonics) {
+        rtt_init_print!();
+        rprintln!("Hello, world!");
+
+        loop {
+            rprintln!("RTIC works!");
+        }
     }
 }
