@@ -1,2 +1,5 @@
 [default.general]
 chip = "STM32G0B1REIxN"
+
+[default.rtt]
+enabled = true

@@ -11,11 +11,14 @@ use cortex_m::asm;
 use cortex_m_rt::entry;
 use stm32g0::stm32g0b1;
 
+use rtt_target::{rprintln, rtt_init_print};
+
 #[entry]
 fn main() -> ! {
-    asm::nop(); // To not have main optimize to abort in release mode, remove when you add code
+    rtt_init_print!();
+    rprintln!("Hello, world!");
 
     loop {
-        // your code goes here
+        rprintln!("Bruh!");
     }
 }
