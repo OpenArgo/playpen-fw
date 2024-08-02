@@ -2,7 +2,8 @@
 
 ## Quickstart
 - Install `probe-rs` (see below, see section on setting up STLink probe)
-- Run `cargo-embed` (Builds + flashes)
+- Run `rustup update && rustup target add thumbv6m-none-eabi` (Installs toolchain for Cortex M0, the architecture of the STM32G0)
+- Run `cargo-embed` (Builds + flashes + Prints out RTT logs)
 
 ## Creation of Code
 - Repo generated with [`cortex-m-quickstart`](https://github.com/rust-embedded/cortex-m-quickstart)
