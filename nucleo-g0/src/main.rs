@@ -24,8 +24,11 @@ mod app {
         rtt_init_print!();
         rprintln!("Hello, world!");
 
+        let mut i :u64 = 0;
+
         loop {
-            rprintln!("RTIC works!");
+            rprintln!("RTIC works {}!", i);
+            i += 1;
         }
     }
 }
