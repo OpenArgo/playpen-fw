@@ -6,10 +6,7 @@
 - Run `cargo-embed` (Builds + flashes + Prints out RTT logs)
 
 ## Creation of Code
-- Repo generated with [`cortex-m-quickstart`](https://github.com/rust-embedded/cortex-m-quickstart)
-- [`stm32g0` crate](https://crates.io/crates/stm32g0)
-- [`embassy-rs`](https://embassy.dev/) for scheduling
-    -  Note that I don't trust the embassy HAL, I'd rather decouple the HAL from processing to make code more portable
+- Repo heavily based on [Embassy STM32G0 blinky example](https://github.com/embassy-rs/embassy/blob/fdc34b69ffc292427f50f35209f095bb5a50bb82/examples/stm32g0/src/bin/blinky.rs)
 
 ## Tooling
 > Since STMs are pretty well supported, you can use whatever tooling you want for flashing and debug once you have the binary, these are just recommended
