@@ -1,0 +1,6 @@
+[target.thumbv6m-none-eabi]
+
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+
+[build]
+target = "thumbv6m-none-eabi"        # Cortex-M0 and Cortex-M0+
